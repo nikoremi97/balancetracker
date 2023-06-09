@@ -37,6 +37,7 @@ module "ecs" {
   task_role                     = module.iam.roles.task_role
   ecs_exec_role                 = module.iam.roles.ecs_exec_role
   balancetracker_repository_url = module.ecr.balancetracker_repository.repository_url
+  target_group                  = module.ec2.target_group
 }
 
 module "ec2" {
