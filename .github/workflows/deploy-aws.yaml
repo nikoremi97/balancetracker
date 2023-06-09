@@ -28,6 +28,7 @@
 name: Deploy to Amazon ECS
 
 on:
+  # this could be changed to deploy only for new releases
   pull_request:
     types: [closed]
   workflow_dispatch:

@@ -31,6 +31,11 @@ variable "balancetracker_repository_url" {
   default = ""
 }
 
+variable "target_group" {
+  type    = string
+  default = ""
+}
+
 variable "tags" {
   type = map(string)
 }
