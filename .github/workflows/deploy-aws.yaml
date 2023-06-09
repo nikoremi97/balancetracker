@@ -28,7 +28,8 @@
 name: Deploy to Amazon ECS
 
 on:
-  push:
+  pull_request:
+    types: [closed]
   workflow_dispatch:
 
 env:
