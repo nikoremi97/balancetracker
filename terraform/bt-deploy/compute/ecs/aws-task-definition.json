@@ -1,0 +1,82 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:487359670077:task-definition/balancetracker-deployment:5",
+    "containerDefinitions": [
+        {
+            "name": "balancetracker-container",
+            "image": "487359670077.dkr.ecr.us-east-1.amazonaws.com/balancetracker-service",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "containerPort": 5000,
+                    "hostPort": 0,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/balancetracker-deployment",
+                    "awslogs-region": "",
+                    "awslogs-stream-prefix": "ecs",
+                    "awslogs-region": "us-east-1"
+                }
+            }
+        }
+    ],
+    "family": "balancetracker-deployment",
+    "taskRoleArn": "arn:aws:iam::487359670077:role/ecs-task-role",
+    "executionRoleArn": "arn:aws:iam::487359670077:role/ecs-execution-role",
+    "revision": 5,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EXTERNAL",
+        "EC2"
+    ],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "1024",
+    "memory": "256",
+    "registeredAt": "2023-06-09T03:40:02.893Z",
+    "registeredBy": "arn:aws:iam::487359670077:user/nico",
+    "tags": [
+        {
+            "key": "product",
+            "value": "balancetracker"
+        },
+        {
+            "key": "service",
+            "value": "compute"
+        },
+        {
+            "key": "Name",
+            "value": "balancetracker-deployment-task-definition"
+        }
+    ]
+}

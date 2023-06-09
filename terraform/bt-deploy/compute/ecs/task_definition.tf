@@ -27,6 +27,7 @@ resource "aws_ecs_task_definition" "task_definition" {
           "awslogs-group"         = aws_cloudwatch_log_group.task_definition.name
           "awslogs-region"        = var.region
           "awslogs-stream-prefix" = "ecs"
+          "awslogs-region"        = "us-east-1"
         }
       }
     }

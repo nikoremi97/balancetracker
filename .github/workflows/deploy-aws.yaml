@@ -36,7 +36,7 @@ env:
   ECR_REPOSITORY: balancetracker-service # set this to your Amazon ECR repository name
   ECS_SERVICE: balancetracker-service-2 # set this to your Amazon ECS service name
   ECS_CLUSTER: balancetracker # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: balancetracker-deployment # set this to the path to your Amazon ECS task definition file, e.g. .aws/task-definition.json
+  ECS_TASK_DEFINITION: terraform/bt-deploy/compute/ecs/aws-task-definition.json # set this to the path to your Amazon ECS task definition file, e.g. .aws/task-definition.json
   CONTAINER_NAME: balancetracker-container # set this to the name of the container in the containerDefinitions section of your task definition
 
 permissions:
