@@ -1,0 +1,8 @@
+region               = "us-east-1"
+ecs_execution_role   = "ecs-execution-role"
+ecs_task_role        = "ecs-task-role"
+ec2_instance_role    = "ec2-instance-role"
+cluster_name         = "balancetracker"
+task_definition_name = "balancetracker-deployment"
+container_name       = "balancetracker-container"
+instance_type_spot   = "t2.micro"
