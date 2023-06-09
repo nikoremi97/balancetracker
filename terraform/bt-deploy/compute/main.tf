@@ -40,10 +40,11 @@ module "ecs" {
 }
 
 module "ec2" {
-  source            = "./ec2"
-  tags              = local.tags
-  cluster_name      = var.cluster_name
-  ec2_instance_role = module.iam.roles.ec2_instance
+  source             = "./ec2"
+  tags               = local.tags
+  cluster_name       = var.cluster_name
+  instance_type_spot = var.instance_type_spot
+  ec2_instance_role  = module.iam.roles.ec2_instance
 }
 
 module "iam" {
