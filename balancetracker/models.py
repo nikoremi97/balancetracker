@@ -1,11 +1,13 @@
+import uuid
+from sqlalchemy.dialects.mysql import CHAR
 from app import db
 
 class Client(db.Model):
     __tablename__ = 'clients'
 
     #Fields
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20))
+    id = db.Column(CHAR(20), default=lambda: str(uuid.uuid4()), primary_key=True)
+    name = db.Column(db.String(30))
     money = db.Column(db.Integer)
 
     #Initialize database

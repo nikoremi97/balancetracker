@@ -4,10 +4,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends build-essential
 
 RUN pip install --upgrade pip
 
-COPY ./ ./
+ADD ./requirements.txt ./requirements.txt
 
 RUN pip install PyMySQL
 RUN pip install --no-cache-dir -r requirements.txt
+
+COPY ./ ./
 
 ENV FLASK_APP=app.py
 ENV APP_SETTINGS="config.DevelopmentConfig"
