@@ -1,0 +1,12 @@
+cluster_identifier      = "balancetracker-clients"
+engine                  = "aurora-mysql"
+engine_version          = "5.7.mysql_aurora.2.11.2"
+port                    = 3306
+availability_zones      = ["us-east-1a", "us-east-1c", "us-east-1d"]
+database_name           = "clients"
+master_username         = "admin"
+backup_retention_period = 1
+preferred_backup_window = "07:00-09:00"
+region                  = "us-east-1"
+apply_immediately       = false
+vpc_security_group_ids  = ["sg-0b409c6199b1a9a4b"]

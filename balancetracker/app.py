@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['MYSQL_USER'] = 'admin' 
 db = SQLAlchemy(app)
 
 from models import Client
@@ -36,8 +37,34 @@ def add_client():
 @app.route("/getall")
 def get_all():
     try:
-        clients = Client.query.all()
-        return jsonify([e.serialize() for e in clients])
+        page = request.args.get('page', 1, type=int)
+        per_page = request.args.get('per_page', 10, type=int)
+
+        clients = Client.query.paginate(page, per_page, error_out=False)
+
+        if not clients.items:
+            return jsonify({'message': 'No clients found'}), 404
+
+        client_list = []
+        for client in clients.items:
+            client_list.append({
+                'id': client.id,
+                'name': client.name,
+                'money': client.money
+                # Add more attributes as needed
+            })
+
+        result = {
+            'clients': client_list,
+            'page': clients.page,
+            'per_page': clients.per_page,
+            'total_pages': clients.pages,
+            'total_clients': clients.total
+        }
+
+        return jsonify(result)
+        # clients = Client.query.all()
+        # return jsonify([e.serialize() for e in clients])
     except Exception as e:
         return (str(e))
 
