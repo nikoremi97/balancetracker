@@ -27,8 +27,8 @@ Repository for BalanceTracker
     - [ ] deploy.
 
 5. Infrastructure as code (IaC):
-   - [ ] Choose an IaC tool (e.g., Terraform, AWS CloudFormation).
-   - [ ] Define infrastructure components in code.
+   - [✅] Choose an IaC tool (e.g., Terraform, AWS CloudFormation).
+   - [✅] Define infrastructure components in code.
    - [ ] Automate provisioning and management of the infrastructure.
 
 6. Configuration management:
