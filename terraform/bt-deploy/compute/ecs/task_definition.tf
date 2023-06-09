@@ -36,6 +36,6 @@ resource "aws_ecs_task_definition" "task_definition" {
   task_role_arn            = var.task_role
   execution_role_arn       = var.ecs_exec_role
   cpu                      = 1024
-  memory                   = 2048
+  memory                   = 256
   tags                     = merge(var.tags, { Name = "${var.task_definition_name}-task-definition" })
 }
