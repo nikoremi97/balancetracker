@@ -27,6 +27,7 @@ resource "aws_ecs_task_definition" "task_definition" {
           "awslogs-group"         = aws_cloudwatch_log_group.task_definition.name
           "awslogs-region"        = var.region
           "awslogs-stream-prefix" = "ecs"
+          "awslogs-region"        = "us-east-1"
         }
       }
     }
@@ -36,6 +37,6 @@ resource "aws_ecs_task_definition" "task_definition" {
   task_role_arn            = var.task_role
   execution_role_arn       = var.ecs_exec_role
   cpu                      = 1024
-  memory                   = 2048
+  memory                   = 1024
   tags                     = merge(var.tags, { Name = "${var.task_definition_name}-task-definition" })
 }

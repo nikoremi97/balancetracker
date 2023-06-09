@@ -12,7 +12,7 @@ Repository for BalanceTracker
    - [ ] Review the code for readability and maintainability.
    - [✅] Ensure adherence to coding standards and best practices.
    - [ ] Check for modular design and separation of concerns.
-   - [ ] Verify the presence of appropriate naming conventions and code comments.
+   - [✅] Verify the presence of appropriate naming conventions and code comments.
    - [ ] Evaluate error handling mechanisms.
 
 3. Version control:
@@ -20,20 +20,20 @@ Repository for BalanceTracker
    - [✅] Commit the code and maintain a clear and organized commit history.
 
 4. Continuous integration and delivery (CI/CD):
-   - [ ] Set up a CI/CD pipeline using a preferred tool (e.g., Jenkins, GitLab CI/CD).
+   - [✅] Set up a CI/CD pipeline using Github Actions.
    Configure the Github Actions workflow to:
     - [✅] build
     - [✅] test
-    - [ ] deploy.
+    - [✅ ] deploy.
 
 5. Infrastructure as code (IaC):
    - [✅] Choose an IaC tool (e.g., Terraform, AWS CloudFormation).
    - [✅] Define infrastructure components in code.
-   - [ ] Automate provisioning and management of the infrastructure.
+   - [✅] Automate provisioning and management of the infrastructure.
 
 6. Configuration management:
    - [ ] Automate the setup of required services and dependencies.
-   - [ ] Ensure consistent application configuration across environments.
+   - [✅] Ensure consistent application configuration across environments.
 
 7. Monitoring and logging:
    - [ ] Implement a monitoring solution (e.g., Prometheus, Datadog).
@@ -47,9 +47,9 @@ Repository for BalanceTracker
    - [ ] Consider using tools like Vault for secrets management.
 
 9. Scalability and high availability:
-   - [ ] Design infrastructure and architecture for scalability.
-   - [ ] Set up load balancers, auto-scaling groups, and database replication.
-   - [ ] Ensure high availability of the application.
+   - [✅] Design infrastructure and architecture for scalability.
+   - [✅] Set up load balancers, auto-scaling groups, and database replication.
+   - [✅] Ensure high availability of the application.
 
 10. Documentation:
     - [ ] Provide comprehensive documentation for the solution.
