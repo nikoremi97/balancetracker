@@ -20,6 +20,21 @@ resource "aws_iam_policy" "task_policy" {
         ]
         Effect   = "Allow"
         Resource = "*"
+      },
+      {
+        Action = [
+          "secretsmanager:GetSecretValue",
+        ]
+        Effect   = "Allow"
+        Resource = "arn:aws:secretsmanager:*:487359670077:secret:balancetracker_db_secret*"
+      },
+      {
+        Action = [
+          "secretsmanager:ListSecrets",
+          "kms:Decrypt"
+        ]
+        Effect   = "Allow"
+        Resource = "*"
       }
     ]
   })
