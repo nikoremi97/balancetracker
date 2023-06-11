@@ -1,4 +1,7 @@
+boto3==1.26.151
+botocore==1.29.151
 Flask==2.3.2
-flask_migrate==4.0.4
-flask_script==2.0.6
+Flask_Migrate==4.0.4
+Flask_Script==2.0.6
 flask_sqlalchemy==3.0.3
+SQLAlchemy==2.0.15

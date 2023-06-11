@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from secrets_manager import get_db_secret
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -9,6 +10,10 @@ app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['MYSQL_USER'] = 'admin' 
+
+db_access = get_db_secret()
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{db_access}@balancetracker-database.cx71efueaba7.us-east-1.rds.amazonaws.com:3306/clients'
+
 db = SQLAlchemy(app)
 
 from models import Client
