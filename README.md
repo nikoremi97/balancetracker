@@ -1,7 +1,7 @@
 # balancetracker 💸
 Repository for BalanceTracker
 
-📂 **Please check out the `demos` folder for exciting project demos! It showcases the following:**
+📂 **Please check out the [demos](https://github.com/nikoremi97/balancetracker/tree/main/demos) folder for exciting project demos! It showcases the following:**
 
 🚀 Application Running: Get a live preview of the application in action.
 
