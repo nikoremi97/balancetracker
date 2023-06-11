@@ -23,6 +23,14 @@ locals {
   }
 }
 
+module "iam" {
+  source             = "./iam"
+  tags               = local.tags
+  ecs_execution_role = var.ecs_execution_role
+  ecs_task_role      = var.ecs_task_role
+  ec2_instance_role  = var.ec2_instance_role
+}
+
 module "ecr" {
   source = "./ecr"
   tags   = local.tags
@@ -33,6 +41,7 @@ module "ecs" {
   tags                          = local.tags
   cluster_name                  = var.cluster_name
   container_name                = var.container_name
+  service_name                  = var.service_name
   task_definition_name          = var.task_definition_name
   task_role                     = module.iam.roles.task_role
   ecs_exec_role                 = module.iam.roles.ecs_exec_role
@@ -48,10 +57,9 @@ module "ec2" {
   ec2_instance_role  = module.iam.roles.ec2_instance
 }
 
-module "iam" {
-  source             = "./iam"
-  tags               = local.tags
-  ecs_execution_role = var.ecs_execution_role
-  ecs_task_role      = var.ecs_task_role
-  ec2_instance_role  = var.ec2_instance_role
+module "alarms" {
+  source       = "./alarms"
+  tags         = local.tags
+  cluster_name = var.cluster_name
+  service_name = var.service_name
 }

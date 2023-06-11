@@ -45,7 +45,7 @@ def get_all():
         page = request.args.get('page', 1, type=int)
         per_page = 10
 
-        clients = Client.query.paginate(page, per_page)
+        clients = Client.query.paginate(page=page, per_page=per_page, error_out=False)
 
         if not clients.items:
             return jsonify({'message': 'No clients found'}), 404

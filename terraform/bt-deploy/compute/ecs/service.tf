@@ -1,7 +1,7 @@
 resource "aws_ecs_service" "ecs_service" {
   depends_on = [aws_ecs_cluster.balancetracker, aws_ecs_task_definition.task_definition]
 
-  name                  = "balancetracker-service-2"
+  name                  = var.service_name
   cluster               = aws_ecs_cluster.balancetracker.id
   task_definition       = "balancetracker-deployment"
   desired_count         = 1
