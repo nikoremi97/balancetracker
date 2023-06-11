@@ -1,0 +1,30 @@
+name: Terraform code check
+on: [push]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        Directory: ["terraform/bt-deploy/compute", "terraform/bt-deploy/database"]
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: hashicorp/setup-terraform@v2
+
+      - name: Terraform fmt
+        working-directory: ${{ matrix.Directory }}
+        id: fmt
+        run: terraform fmt -recursive -check
+        continue-on-error: false
+
+      - name: Terraform Init
+        working-directory: ${{ matrix.Directory }}
+        id: init
+        run: terraform init --backend=false
+        continue-on-error: false
+
+      - name: Terraform Validate
+        working-directory: ${{ matrix.Directory }}
+        id: validate
+        run: terraform validate -no-color
+        continue-on-error: false
