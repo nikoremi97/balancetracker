@@ -37,3 +37,8 @@ variable "instance_type_spot" {
   type    = string
   default = ""
 }
+
+variable "service_name" {
+  type    = string
+  default = ""
+}
