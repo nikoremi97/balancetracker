@@ -15,17 +15,16 @@ provider "aws" {
   # }
 }
 
-module "aurora" {
-  source                  = "./rds"
-  cluster_identifier      = var.cluster_identifier
-  engine                  = var.engine
-  engine_version          = var.engine_version
-  availability_zones      = var.availability_zones
-  database_name           = var.database_name
-  master_username         = var.master_username
-  master_password         = var.master_password
-  backup_retention_period = var.backup_retention_period
-  preferred_backup_window = var.preferred_backup_window
-  apply_immediately       = var.apply_immediately
-  vpc_security_group_ids  = var.vpc_security_group_ids
+module "rds" {
+  source              = "./rds"
+  identifier          = var.identifier
+  db_name             = var.db_name
+  instance_class      = var.instance_class
+  port                = var.port
+  backup_window       = var.backup_window
+  engine_version      = var.engine_version
+  maintenance_window  = var.maintenance_window
+  monitoring_role_arn = var.monitoring_role_arn
+  network_type        = var.network_type
+  storage_type        = var.storage_type
 }
