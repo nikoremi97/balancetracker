@@ -2,7 +2,7 @@
 
 Welcome to the demo of the Flask app deployed and running online! 🌐
 
-🔗 Try it out for yourself at [http://balancetracker-load-balancer-1824383580.us-east-1.elb.amazonaws.com/](http://balancetracker-load-balancer-1824383580.us-east-1.elb.amazonaws.com/)
+🔗 Try it out for yourself at [http://balancetracker-load-balancer-1824383580.us-east-1.elb.amazonaws.com/](http://balancetracker-load-balancer-1824383580.us-east-1.elb.amazonaws.com/) (use http since it's not a registered domain)
 
 The solution leverages multiple AWS services to bring the app to life. It utilizes an instance of MySQL running on AWS RDS, an ECS cluster with a service hosting a container, and a load balancer to ensure efficient access to the container. The container itself is running on an EC2 instance.
 
