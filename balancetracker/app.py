@@ -43,9 +43,9 @@ def add_client():
 def get_all():
     try:
         page = request.args.get('page', 1, type=int)
-        per_page = request.args.get('per_page', 10, type=int)
+        per_page = 10
 
-        clients = Client.query.paginate(page, per_page, error_out=False)
+        clients = Client.query.paginate(page, per_page)
 
         if not clients.items:
             return jsonify({'message': 'No clients found'}), 404
